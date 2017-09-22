@@ -10,9 +10,9 @@
 
 ```
 owner:
-    hid: 000
-    name: Gregor von Laszewski
-    url: https://github.com/bigdata-i523/sample-hid000
+    hid: 341
+    name: Tibenkana, Jacob
+    url: https://github.com/bigdata-i523/341
 ```
 
 # Paper 1
@@ -20,14 +20,12 @@ owner:
 ```
 paper1:
    author: 
-   - Gregor von Laszewski
-   - Fugang Wang
+   - Tibenkana, Jacob
    hid:
-   - 000
-   - 001
+   - 341
    title: This is my paper about xyz
    abstract: This paper showcases this and that and the other
-   url: https://github.com/bigdata-i523/sample-hid000/paper1/report.pdf
+   url: https://github.com/bigdata-i523/341/paper1/report.pdf
    type: latex
    status: in progress
 ```
@@ -37,12 +35,12 @@ paper1:
 ```
 paper2:
    author: 
-   - Gregor von Laszewski
+   - Tibenkana, Jacob
    hid:
-   - 000
+   - 341
    title: This is my paper about the other abc
    abstract: This paper showcases this and that and the other in regards to abc
-   url: https://github.com/bigdata-i523/sample-hid000/paper2/report.pdf   
+   url: https://github.com/bigdata-i523/341/paper2/report.pdf   
    type: word
    status: in progress
 ```
@@ -58,9 +56,9 @@ Just use one type and delete the line with
 project:
    type: project
    author: 
-   - Gregor von Laszewski
+   - Tibenkana, Jacob 
    pid:
-   - 000
+   - 341
    title: Benchmarking a BigData Docker deployment
    abstract: This paper showcases tis and that and the other 
    url: https://github.com/bigdata-i523/sample-pid000/project/report.pdf
