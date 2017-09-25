@@ -12,7 +12,7 @@
 owner:
     hid: 341
     name: Tibenkana, Jacob
-    url: https://github.com/bigdata-i523/341
+    url: https://github.com/bigdata-i523/hid341
 ```
 
 # Paper 1
