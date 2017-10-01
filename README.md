@@ -28,6 +28,7 @@ paper1:
    url: https://github.com/bigdata-i523/341/Big Data Applications for Clinical Trials/report.pdf
    type: latex
    status: in progress
+   chapter: TBD
 ```
    
 # Paper 2
