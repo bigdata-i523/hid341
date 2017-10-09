@@ -21,10 +21,10 @@ owner:
 paper1:
    author: 
    - Tibenkana, Jacob
-   hid:>
+   hid:
    - 341
    title: Big Data Applications for Clinical Trials
-   abstract: 
+   abstract:>
        This paper will provide a brief overview of how Pharmaceutical
        companies use big data applications to track and analyze data for
        clinical trials.  This paper will also explore the relationship
