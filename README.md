@@ -23,8 +23,9 @@ paper1:
    - Tibenkana, Jacob
    hid:
    - 341
-   title: This is my paper about xyz
-   abstract: This paper showcases this and that and the other
+   title: Big Data Applications for Clinical Trials
+   abstract:>
+   This paper showcases this and that and the other
    url: https://github.com/bigdata-i523/341/Big Data Applications for Clinical Trials/report.pdf
    type: latex
    status: in progress
