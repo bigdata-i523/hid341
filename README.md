@@ -25,11 +25,13 @@ paper1:
    - 341
    title: Big Data Applications for Clinical Trials
    abstract:>
-   This paper showcases this and that and the other
-   url: https://github.com/bigdata-i523/341/Big Data Applications for Clinical Trials/report.pdf
+    This  paper will  provide a brief overview  of how Pharmaceutical companies use big data applications to track and analyze data 
+    for clinical trials. 
+    This paper will also explore the relationship between data quality and the intergrity of the clinical studies. 
+   url: https://github.com/bigdata-i523/341/paper1/report.pdf
    type: latex
    status: in progress
-   chapter: TBD
+   chapter: Clinical
 ```
    
 # Paper 2
