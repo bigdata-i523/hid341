@@ -21,7 +21,7 @@ owner:
 paper1:
    author: 
    - Tibenkana, Jacob
-   hid:
+   hid:>
    - 341
    title: Big Data Applications for Clinical Trials
    abstract: 
