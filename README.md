@@ -31,7 +31,7 @@ paper1:
        between data quality and the intergrity of the clinical studies.
    url: https://github.com/bigdata-i523/341/paper1/report.pdf
    type: latex
-   status: in progress
+   status: 100%
    chapter: Clinical
 ```
    
