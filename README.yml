@@ -1,0 +1,41 @@
+---
+owner:
+    hid: 341
+    name: Tibenkana, Jacob
+    url: https://github.com/bigdata-i523/hid341
+paper1:
+    abstract: 'This paper will provide a brief overview of how Pharmaceutical companies
+        use big data applications to track and analyze data for clinical trials.  This
+        paper will also explore the relationship between data quality and the intergrity
+        of the clinical studies.
+
+        '
+    author:
+        - Tibenkana, Jacob
+    chapter: Clinical
+    hid:
+        - 341
+    status: 100%
+    title: Big Data Applications for Clinical Trials
+    type: latex
+    url: https://github.com/bigdata-i523/341/paper1/report.pdf
+paper2:
+    abstract: This paper showcases this and that and the other in regards to abc
+    author:
+        - Tibenkana, Jacob
+    hid:
+        - 341
+    status: in progress
+    title: This is my paper about the other abc
+    type: word
+    url: https://github.com/bigdata-i523/341/paper2/report.pdf
+project:
+    abstract: This paper showcases tis and that and the other
+    author:
+        - Tibenkana, Jacob
+    pid:
+        - 341
+    status: in progress
+    title: Benchmarking a BigData Docker deployment
+    type: latex
+    url: https://github.com/bigdata-i523/sample-pid000/project/report.pdf
