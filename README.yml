@@ -20,14 +20,20 @@ paper1:
     url: https://github.com/bigdata-i523/341/paper1/report.pdf
 paper2:
     review: Nov 6 2017
-    abstract: This paper showcases this and that and the other in regards to abc
+    abstract: We live in the age of information. Data is everywhere and is increasingly becoming a major player in the way people and companies make decisions. 
+    There are many data analytics companies today to help other companies make decisions based on the data they collect. 
+    People consult Yelp for decision making on a restaurant, barber shops, banks to use, etc. 
+    More however, the machinery we have today from the industrial age is programmed using data we have collected over the years. 
+    There is a challenge though, we cannot take random information and find an application for it without first cleaning it and presenting it in a friendlier human way, so people can make sense of it and determine its applications. 
+    Hence, enter the field of Data Visualizations
     author:
         - Tibenkana, Jacob
+    chapter: Visualizations    
     hid:
         - 341
-    status: in progress
-    title: This is my paper about the other abc
-    type: word
+    status: 100%
+    title: Big Data Applications for Visualizations
+    type: Latex
     url: https://github.com/bigdata-i523/341/paper2/report.pdf
 project:
     abstract: This paper showcases tis and that and the other
