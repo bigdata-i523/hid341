@@ -44,11 +44,10 @@ in other words, data visualization is taking data or pieces of information and p
 According to Rosemary Radich in her article Big Data For Humans: The Importance of Data Visualization, companies look at the data itself and for an individual who can analyze that data, because the data available today to businesses and costumers can be crushing. The human brain can only process a couple of items at a time. Therefore, the need for people who can accurately present and communicate the data effectively is critical. “Everyone has heard the old moniker garbage in – garbage out. It is a simple way of saying that machine learning is only as good as the data, algorithms, and human experience that goes into them. But even the best results can be thought of as garbage if no one can see and understand the value of the output (Radich, May 8, 2017) Radich makes a good point here; It is important that people can understand the result. Otherwise all the work spent to make a report can be wasteful if no one understands its purpose. 
 What programs do people and companies use to make the “garbage” (Radich, May 8, 2017) presentable in a purposeful way? It was mentioned above that programs like Google Chart, Tableau, etc. can be used to make visualizations for audiences to gain further insight of what the data is showing. Let’s explore a few of these programs such as Google Chart and Tableau. 
 
-\section{Google Chart}
+\section{Google Chart and Tableau}
 According to the Google developer website, Google Chart allows users to use various chart types to present or plot their data. With Google Chart one can configure extensive sets of data to perfectly match their website. It can visualize data on old internet explorers and can be carried over to IOS and Android with no plugins needed. It also allows people to connect to their information in real time by a various data linking tools and conventions. (Google Developers website) Finances Online says, “Google Charts offers users with an online tool that enables users to display their data on their website via simple or attractive visualizations.” (FinancesOnline) It is also free. Using google Chart people can make Geo Charts, Histograms, Area Charts, Org Charts, Timelines, Scatter Plots, Bar Chats, Stepped Area Charts, Bubble Charts, Tree maps, Gauges, Colum Charts, Combo Charts, Line Charts, Donut Charts, Tables, and Candlestick Charts. (Google Developers website) Clearly, there are many options one has with Google chart depending on what visuals they want to create. Simply put, use google spread sheets to store information and then use Google Chart to display this information in the options of visuals listed above. This can also be done through another program called Tableau. 
 
-\section{Tableau}
-According to the Tableau website, Tableau is a program that allows to connect and visualize one’s information in mintues; it is 10 to 100 times faster than other visual programs. It does not require programming knowledge and almost anyone can use it. It allows you to explore any data, updates automatically, and takes seconds to share visualizations on the web and mobile devices. “Wells Fargo wrangles data from over 70 million customers to redesign customer banking portals” through Tableau. (Tableau) This clearly falls in the realm of big data visualization. Finances Online says, “Tableau provides beautiful data analytics that can help all business make better business decisions.” (FinancesOnline) Tableau offers more visual options than google chart that are used in the Healthcare analytics, Education analytics, Government analytics, IT analytics, Marketing analytics, Big Data, Maps, Amazon Web services, and Google itself. (Tableau) Below is a chart from Idatalabs comparing the use of Google Chart vs Tableau, and other competitors for business intelligence. 
+According to the Tableau website, Tableau is a program that allows to connect and visualize one’s information in mintues; it is 10 to 100 times faster than other visual programs. It does not require programming knowledge and almost anyone can use it. It allows you to explore any data, updates automatically, and takes seconds to share visualizations on the web and mobile devices. “Wells Fargo wrangles data from over 70 million customers to redesign customer banking portals” through Tableau. (Tableau) This clearly falls in the realm of big data visualization. Finances Online says, “Tableau provides beautiful data analytics that can help all business make better business decisions.” (FinancesOnline) Tableau offers more visual options than google chart that are used in the Healthcare analytics, Education analytics, Government analytics, IT analytics, Marketing analytics, Big Data, Maps, Amazon Web services, and Google itself. (Tableau) Below in Figure 1, Idatalabs compares the use of Google Chart vs Tableau, and other competitors for business intelligence. 
 
 \begin{figure}[htb]
   \centering
@@ -56,6 +55,53 @@ According to the Tableau website, Tableau is a program that allows to connect an
   \caption{Comparision of companies using Google Chart Vs Tableau and Other Programs
   \cite{Idatalabs}}
   \label{fig:Figure 1} 
+\end{figure}
+
+As shown in Figure 1\ref{fig:Figure 1}, One can see that more companies use Tableau than Google Charts. Please note, the blue text that says click to view all other to products is a collection of other companies, which are not all displayed in the pie chart, because there are many other companies that do data visualization and analytics. Please visit this link https://idatalabs.com/tech/business-intelligence to see the rest of the rest of the companies. Google Chart and Tableau, and all those other products are good to use for data visualization, but we can even go a step further with programing languages such as Python and R. 
+
+\section{Python}
+“Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.” Python is built for rapid application development, scripting, or glue language to link present components collectively. (Python Software Foundation, 2001-2017) This language is not however just limited to this. It can be used to make games, predictive models, make apps, work with other languages to build websites, investigate data to find collations, calculate averages and standard deviations, and build algorithms to solve complex problems such as in Artificial Intelligence. In addition, it has built in libraries that can allow the user to plot charts and create visuals from data. No wonder the Python Software Website says “Often, programmers fall in love with Python because of the increased productivity it provides” (Python Software Foundation, 2001-2017). Returning to the visual aspect, Python does not have many decorative visualizations as Tableau, but it offers of broader range of functionality, and a way to explore complex problems, and create solutions, which can be turned into visuals for people to better understand what’s happening. 
+So how do visuals work in Python? Well according to an article called 9 Popular Ways to Perform Data Visualization in Python written by Sunil Ray from the Analytics Vidhya website, there are two libraries in Python called Matplotlib and Seaborn. Matplotib allows users to produce 2D and limited 3D graphic content. It also enables creation of animations as well. The other library is Seaborn, allows creation of informative and statistical graphs. Seaborn also provides many options such as “built in themes, color palettes, functions and tools to visualize univariate, bivariate, linear regression, matrices of data, statistical time series etc., which lets us to build complex visualizations.” (Sunil Ray, 2015)
+In his article, Sunil Ray goes to show 9 examples of visualization he makes from the following Data set (Table 1):
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 1.png}
+  \caption{Data Set Provided by Sunil Ray
+  \cite{Sunil Ray }}
+  \label{fig:Table 1} 
+\end{figure}
+
+From this data set, let’s look at three visualizations created by Sunil, to see more visit https://www.analyticsvidhya.com/blog/2015/05/data-visualization-python/.  
+
+He starts off by importing the Matplotlib and Seaborn libraries into his Python text editor by using this call function, import matplotlib.pyplot as plt, this provides access to the chart capabilities in Matplotlib and Seaborn.
+Then he imports the Pandas library as, import pandas as pd, “Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with relational or labeled data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python.” (Pydata, 2017) 
+Next he Imports his data frame, which is the date set above in the table along with pandas processing and reading that data set through the code, df=pd.read_excel("E:/First.xlsx", "Sheet1"
+
+The three visulizations below are, a histogram showing age distribution (Graph 1), a box plot to show the spreading of ages based on the five elements: the min age, first quartile age, median age, third quartile age, and max age (Graph 2). He creates a violin plot (Graph 3) to show the relation between age and gender of the data set in the table above.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 1.png}
+  \caption{Age Distribution Histogram
+  \cite{Sunil Ray }}
+  \label{fig:Graph 1} 
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 1.png}
+  \caption{Age Spread Box Plot
+  \cite{Sunil Ray }}
+  \label{fig:Graph 2} 
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 1.png}
+  \caption{Age Comparision Between Genders Violin Plot
+  \cite{Sunil Ray }}
+  \label{fig:Graph 3} 
 \end{figure}
 
 \section{Challenges}
