@@ -123,18 +123,128 @@ plt.show()
 The python code for this violin plot is:
 sns.violinplot(df['Age'], df['Gender']) #Variable Plotsns.despine()
 
-\section{Challenges}
+Note these are example of what Python can do, however someone can contend that the same results can be achieved in excel. Yes, this can be done in excel, but what happens if one has over hundreds of thousands of data from different sources. Excel can crush if there is too much information and depending on the capabilities of the computer. Therefore, Python can be a program to get around this. Another program like Python that will do visualizations is R. 
 
-According to Dr. Steven Targum in his article, The Distinction between Clinical and Research Interviews in Psychiatry, published by Innovations in Clinical Neuroscience Journal, "Clinical research attempts to minimize any extraneous factors that might affect assessments and adversely influence trial outcomes, including the potential for high placebo responses." (pg.44, March 8, 2011) 
-The Placebo effect is a factor that exists in clinical trials today, and can impact the results of a trail. 
-In order for sponsors to prove that their drug can be used as a treatment for a certain indication, the trial results of the drug have to be more effective than placebo. Unfortunately, placebo cannot be eliminated in a trial, but it can be mitigated. 
-Other challenges include adverse events such as wrong dosage of the drug is given to the subject, protocol deviations or an event of death due to the trial, which can terminate the trail. 
+\section{R}
+R is a programming language and a landscape for arithmetical computing and visuals. “R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible.” (R Foundation) The R Foundation website goes on to say that R’s strength comes from the ease in which publication plots can be produced, in addition to the mathematical codes and workings that are available for use. Furthermore, reaching outside of the default settings for the graphics in R, the user retains control and can explore into options. This can be done by importing the package ggplot2 in R Studio, which will give you access to a wide range of graphics options like the ones found in Matplotlib and Seaborn through Python. According to the R Foundation, R has a built-in documentation format like Latex. (R Foundation) However, users still have an option to use Latex (specifically MiKTeX) with R. The Latex project says, Latex is a system that prepares documents for publication and communication for scientific documents, but it can be used for most publications. (Latex Project) Let look at how visuals can be produced using R and Latex. 
+
+*Please note, the following example of R code with Latex is an example made by Jacob tibenkana and Jeremy Driscoll using the Titanic data pulled from Kraggle. Kraggle is a public online community of individuals (data analysts, data scientists, and others) that uses Pyrhon to investigate real world data examples, however here we will be looking at the data from an R perspective rather than through Python. To begin we need to download the following: R, R studio, and MikTeX (version of Latex). 
+In R Studio, we set the file we are working with to Knitr, which allows to knit Python with Latex. Then we import the following packages, library(knitr), library(ggplot2), library(dplyr), library(tidyr). Think of these like the Python Libraries that were imported in Sunil’s examples above.
+Library(knitr) allows for coupling of R with Latex, Library(ggplot2) allows for access to a wide range of graphics in R, Library(dplyr) and Library(tidyr) allows for exploration and processing of the Titanic data and organize it in tables so we can refer to ggplot2 for the graphics we want to display.
+In R studio, the following will be displayed on line one:
+\documentclass{article}, this is the beginning of the Latex shell and we can type the test we want here to describe the R Code that will follow. For a visual of how this looks in R Studio, please refer to the appendix below. 
+
+Next the R code is displayed as 
+\begin{document}
+<<echo=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+df<-read.csv("train.csv",stringsAsFactors = FALSE)
+@
+<<>>=
+ggplot(data=df,aes(x=Sex))+geom_bar()
+@
+<<>>=
+tb<-df%>%group_by(Sex,Survived)%>%summarise(Sum=n())
+colnames(tb)<-c("Sex","Survived","Sum")
+tb$Survived<-ifelse(tb$Survived==0,"No","Yes")
+kable(tb)
+@
+<<>>=
+ggplot(tb)+geom_col(aes(x=Sex,y=Sum,fill=Survived))
+@
+<<>>=
+df$Agegroups<-ifelse(df$Age<10,"0-9",
+              ifelse(df$Age<20,"10-19",
+              ifelse(df$Age<30,"20-29",
+              ifelse(df$Age<40,"30-39",
+              ifelse(df$Age<50,"40-49",
+              ifelse(df$Age<60,"50-59",
+              ifelse(df$Age<70,"60-69",
+              ifelse(df$Age<80,"70-79",NA))))))))
+tb<-df%>%group_by(Agegroups,Survived)%>%summarise(Sum=n())%>%ungroup()
+tb$Survived<-ifelse(tb$Survived==0,"No","Yes")
+tb<-na.omit(tb)
+x<-data.frame(Agegroups="70-79", Survived="Yes",Sum=0,stringsAsFactors = FALSE)
+tb<-rbind(tb,x)
+tb2<-tb%>%spread(Survived,Sum)
+kable(tb2)
+@
+<<>>=
+ggplot(tb)+geom_col(aes(x=Agegroups,y=Sum,fill=Survived),position="dodge")+xlab("Age Groups")
+@
+<<>>=
+Ave<-df%>%group_by(Survived)%>%summarise("Mean Age"=mean(Age,na.rm = TRUE),"Mean of Siblings and Spouse"=mean(SibSp,na.rm = TRUE))
+Ave$Survived<-ifelse(Ave$Survived==0,"No","Yes")
+kable(Ave)
+@:
+This code will produce the following visuals in a pdf report:
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Graph 4.png}
+  \caption{Bar Graph of Gender Representation on Titanic
+  \cite{Tibenkana and Driscoll, Data Set from kaggle}}
+  \label{fig:Graph 4} 
+\end{figure}
+
+This bar graph (Graph 4) shows how many women and men boarded the Titanic. As one can see there were more men than women that were on the Titanic based on the data set that was provided from Kraggle
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 2.png}
+  \caption{Survived Vs Did Not Survive Per Gender Table
+  \cite{Tibenkana and Driscoll, Data Set from Kaggle}}
+  \label{fig:Table 2} 
+\end{figure}
+
+We can also call on certain information from the Data set and organize it to present it in a table (Table 2). For example, we can look at how many people survived vs did not survive per gender.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Graph 5.png}
+  \caption{Stacked Bar Graph of Survived Vs Did Not Survive Per Gender
+  \cite{Tibenkana and Driscoll, Data Set from Kaggle}}
+  \label{fig:Graph 5} 
+\end{figure}
+
+The data in Table 2 above can be graphed as a stacked bar graph (Graph 5). As one can see, there were more men on board than women, but more women survived than men during the crash and sinking of the Titanic. The reason for why more women survived than men can also be another element to investigate using a statistical approach with R. However, to do this, we would need more data on this event than we have in the data set that was provided from kaggle. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Table 3.png}
+  \caption{Survived Vs Did Not Survive Per Age Group
+  \cite{Tibenkana and Driscoll, Data Set from Kaggle}}
+  \label{fig:Table 3} 
+\end{figure}
+
+Next, we can go a step further and look at the age ranges of the people who survived vs those that did not survive. This is shown in Table 3. Here we have age groups based on a nine-year span between the ages of 0 to 79. Column No represents the people who did not survive in that age group and column Yes represents, the individuals that survived within those age groups. This data can then be displayed in a side to side column graph (Graph 6) below, giving a visual of the people who survived vs who did not survive within their respected age groups.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Graph 6.png}
+  \caption{Sided by Side Column Chart of Survived Vs Did Not Survive Per Age Group
+  \cite{Tibenkana and Driscoll, Data Set from Kaggle}}
+  \label{fig:Graph 6} 
+\end{figure}
+
+From this graph we can see that the most people who survived were in their 20s and the most people who did not survive were also in their 20s as well. No one over the age of 70 survived. In terms of a survival ratio across all age groups, the 0 to 9 years old age group had more survivals than losses while age 20 to 29 had more loses than survivals.
+
+In the code above, R is also calculating the average of survived vs not survived based on age. It turns out that the average age of people who survived was 30.6 and the average age of those who did not survive was 28.34. These are some of the easy computations and visuals that R can produce, however it can do even more complex statistical computations. 
 
 \section{Conclusion} 
-Clinical Trials are utilizing big data applications and analysis to store and track a multitude of documentation from the sites, vendors, sponsors, licensors, and CROs for regulatory purposes and operation of the trail itself. 
-In addition, massive data is collected throughout the trial durations in different applications such as databases and is then investigated and analyzed for various reporting and purposes. 
-Even with this technological progress in clinical trials, there is still more innovations to discover. 
-Advancement in artificial Intelligence, and applications of Data Mining will change clinical trials of the future. 
+To conclude, we have moved from the industrial age and live in the informational age. We still rely on machinery from the industrial age, but the age of information is driving change and processes today. For example, machines today are using information (programming) to build other machines and to operate without the supervision of a people. However, there has to be a general understanding of the information or data before we can put it to use, and a manner in which people can understand this information is through visuals that can be brought about using the programs and products such as Python, R, tableau, etc.
+ 
+\section{Appendix} 
+ \begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{paper2/Latex With R Code in R Studio.png}
+  \caption{Working in R Studio, Latex with R Code
+  \cite{Tibenkana and Driscoll}}
+  \label{fig:Latex With R Code in R Studio} 
+\end{figure}
  
 \begin{acks}
 
