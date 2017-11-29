@@ -128,14 +128,15 @@ Note these are example of what Python can do, however someone can contend that t
 \section{R}
 R is a programming language and a landscape for arithmetical computing and visuals. “R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible.” (R Foundation) The R Foundation website goes on to say that R’s strength comes from the ease in which publication plots can be produced, in addition to the mathematical codes and workings that are available for use. Furthermore, reaching outside of the default settings for the graphics in R, the user retains control and can explore into options. This can be done by importing the package ggplot2 in R Studio, which will give you access to a wide range of graphics options like the ones found in Matplotlib and Seaborn through Python. According to the R Foundation, R has a built-in documentation format like Latex. (R Foundation) However, users still have an option to use Latex (specifically MiKTeX) with R. The Latex project says, Latex is a system that prepares documents for publication and communication for scientific documents, but it can be used for most publications. (Latex Project) Let look at how visuals can be produced using R and Latex. 
 
-*Please note, the following example of R code with Latex is an example made by Jacob tibenkana and Jeremy Driscoll using the Titanic data pulled from Kraggle. Kraggle is a public online community of individuals (data analysts, data scientists, and others) that uses Pyrhon to investigate real world data examples, however here we will be looking at the data from an R perspective rather than through Python. To begin we need to download the following: R, R studio, and MikTeX (version of Latex). 
+*Please note, the following example of R code with Latex is an example made by Jacob tibenkana and Jeremy Driscoll using the Titanic data pulled from Kaggle is a public online community of individuals (data analysts, data scientists, and others) that uses Pyrhon to investigate real world data examples, however here we will be looking at the data from an R perspective rather than through Python. To begin we need to download the following: R, R studio, and MikTeX (version of Latex). 
 In R Studio, we set the file we are working with to Knitr, which allows to knit Python with Latex. Then we import the following packages, library(knitr), library(ggplot2), library(dplyr), library(tidyr). Think of these like the Python Libraries that were imported in Sunil’s examples above.
 Library(knitr) allows for coupling of R with Latex, Library(ggplot2) allows for access to a wide range of graphics in R, Library(dplyr) and Library(tidyr) allows for exploration and processing of the Titanic data and organize it in tables so we can refer to ggplot2 for the graphics we want to display.
 In R studio, the following will be displayed on line one:
 \documentclass{article}, this is the beginning of the Latex shell and we can type the test we want here to describe the R Code that will follow. For a visual of how this looks in R Studio, please refer to the appendix below. 
 
-Next the R code is displayed as 
-\begin{document}
+Next the R code with Latex is displayed as:
+
+%\begin{document}
 <<echo=FALSE>>=
 library(knitr)
 library(ggplot2)
@@ -180,6 +181,9 @@ Ave<-df%>%group_by(Survived)%>%summarise("Mean Age"=mean(Age,na.rm = TRUE),"Mean
 Ave$Survived<-ifelse(Ave$Survived==0,"No","Yes")
 kable(Ave)
 @:
+
+%\end{document}
+
 This code will produce the following visuals in a pdf report:
 
 \begin{figure}[htb]
@@ -190,7 +194,7 @@ This code will produce the following visuals in a pdf report:
   \label{fig:Graph 4} 
 \end{figure}
 
-This bar graph (Graph 4) shows how many women and men boarded the Titanic. As one can see there were more men than women that were on the Titanic based on the data set that was provided from Kraggle
+This bar graph (Graph 4) shows how many women and men boarded the Titanic. As one can see there were more men than women that were on the Titanic based on the data set that was provided from Kaggle.
 
 \begin{figure}[htb]
   \centering
