@@ -1,1 +1,78 @@
+\documentclass[sigconf]{acmart}
 
+\input{format/i523}
+
+\begin{document}
+\title{Big Data Applications for Visualizations}
+
+
+\author{Jacob Tibenkana}
+\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{107 S. Indiana Avenue}
+  \city{Bloomington}
+  \state{Indiana}
+  \postcode{47405-7000}
+}
+\email{jtibenka@iu.edu}
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{J. Tibenkana}
+
+
+\begin{abstract}
+We live in the age of information. Data is everywhere and is increasingly becoming a major player in the way people and companies make decisions. There are many data analytics companies today to help other companies make decisions based on the data they collect. People consult Yelp for decision making on a restaurant, barber shops, banks to use, etc. More however, the machinery we have today from the industrial age is programmed using data we have collected over the years. There is a challenge though, we cannot take random information and find an application for it without first cleaning it and presenting it in a friendlier human way, so people can make sense of it and determine its applications. Hence, enter the field of Data Visualizations. 
+\end{abstract}
+
+\keywords{i523}
+
+
+\maketitle
+
+%here begins the body of the document
+\section{Introduction}
+During the industrial age, machinery was the element that drove production, it stimulated economies, and ushered in a new era where people moved away from hand held tool. (history). According to the History website:
+Industrialization marked a shift to powered, special-purpose machinery, factories and mass production. The iron and textile industries, along with the development of the steam engine, played central roles in the Industrial Revolution, which also saw improved systems of transportation, communication and banking. (History)
+Today, the discoveries and creations that came from the industrial revolution still influence our societies from automobile production, food production, manufacturing jobs, weapons creations, etc., but something else special is also influencing our world now. This is the information age. It can be argued that the human species have been collecting information since they became conscious of themselves and their environment. This has occurred in the past thousand years. Given that it now 2017, this can equate to a massive amount of data. If one must find a solution using information we know, it may be simple if it’s from a single scenario, but what about data collected for years or from multiple sources. This can result in too much information to be analyzed and tracked by the human brain, which will eventually become overwhelming. So how do we get around this? Luckily, due to the advances made in the informational age with computing in big data, programming languages have been made to take a collective of information in files such as CSV and XML or the traditional excel files of information to present it in a more human friendly way.
+People usually use Microsoft Excel to plot graphs and charts of information to show trends, values, etc., and we still use excel to do it today. However, we have more options to dive deeper into big data and link different programs to produce reports. Some of these ways include but not limited to, Google Chart, Tableau, D3, Fusion chart, High charts, Canvas, Qlikview, Datawrapper, Microsoft Power BI, and Oracle Visual Analyzer. (PromptCloud) The softwares listed above are all good to use for data visualization and analysis. Some of them like Tableau do not require any coding knowledge. Even with this long list of programs to use, there is still more. One can use programming languages such as R, Python, Java, etc. to provide a statistical approach to data and compute algorithms that provide solutions from the information we see and collect in the world. This will later be shown where R with Latex can analyze data from the Titanic. However, before we get to that, we should explore data regarding to visualizations and the options we have in the information age. 
+
+\section{Data visualization}
+What is Data visualization and why is it Important? According to the SAS website:
+Data visualization is the presentation of data in a pictorial or graphical format. It enables decision makers to see analytics presented visually, so they can grasp difficult concepts or identify new patterns. With interactive visualization, you can take the concept a step further by using technology to drill down into charts and graphs for more detail, interactively changing what data you see and how it’s processed. (SAS)
+in other words, data visualization is taking data or pieces of information and providing it in images, charts, and graphs so people can see the whole picture. Look at how different pieces work and impact to make a puzzle, which can help decision makers to proceed. The SAS website goes on to say, the idea of using images to conceive data has been in use for hundreds of years, from maps and graphs used in the 1600s to the pie chart that showed up in the 19th century. Today however, data visualization has become its own field of science and art that will impact the corporate landscape. (SAS) Furthermore, the way humans look at information, using pictures to visualize large amount information can be easier than staring at large spreadsheets or reports of text or numbers. Can you imagine what it would be like staring at your cell phone home screen and each app was in the form words or numbers (0s and 1s), it would not be pleasant and that’s why we have icon images to help visualize the apps. Having image icons for apps in our cell phones helps identify really quickly what the apps are and if there is red 1 or red 2 hovering over the image, this notifies us that there is something new that has happened and we should look into it. However, this goes further than just what is on our cell phones, the SAS website says, retail bankers use big data visualizations to improve their customer service and relations.  Retail banking is not the only entity that uses this. Many of us have filled out customer surveys at our favorite corporate chain. (SAS) One can imagine that this information is analyzed visually to see how the company is doing and look at where improvements can be made. At the end of the day, if a company is meeting their customer’s needs, the customer will typically coming back for more business and they will refer their family and friends to this company, which drives up sales and the up most excellence in delivery and revenue.
+According to Rosemary Radich in her article Big Data For Humans: The Importance of Data Visualization, companies look at the data itself and for an individual who can analyze that data, because the data available today to businesses and costumers can be crushing. The human brain can only process a couple of items at a time. Therefore, the need for people who can accurately present and communicate the data effectively is critical. “Everyone has heard the old moniker garbage in – garbage out. It is a simple way of saying that machine learning is only as good as the data, algorithms, and human experience that goes into them. But even the best results can be thought of as garbage if no one can see and understand the value of the output (Radich, May 8, 2017) Radich makes a good point here; It is important that people can understand the result. Otherwise all the work spent to make a report can be wasteful if no one understands its purpose. 
+What programs do people and companies use to make the “garbage” (Radich, May 8, 2017) presentable in a purposeful way? It was mentioned above that programs like Google Chart, Tableau, etc. can be used to make visualizations for audiences to gain further insight of what the data is showing. Let’s explore a few of these programs such as Google Chart and Tableau. 
+
+\section{Google Chart}
+According to the Google developer website, Google Chart allows users to use various chart types to present or plot their data. With Google Chart one can configure extensive sets of data to perfectly match their website. It can visualize data on old internet explorers and can be carried over to IOS and Android with no plugins needed. It also allows people to connect to their information in real time by a various data linking tools and conventions. (Google Developers website) Finances Online says, “Google Charts offers users with an online tool that enables users to display their data on their website via simple or attractive visualizations.” (FinancesOnline) It is also free. Using google Chart people can make Geo Charts, Histograms, Area Charts, Org Charts, Timelines, Scatter Plots, Bar Chats, Stepped Area Charts, Bubble Charts, Tree maps, Gauges, Colum Charts, Combo Charts, Line Charts, Donut Charts, Tables, and Candlestick Charts. (Google Developers website) Clearly, there are many options one has with Google chart depending on what visuals they want to create. Simply put, use google spread sheets to store information and then use Google Chart to display this information in the options of visuals listed above. This can also be done through another program called Tableau. 
+
+\section{Tableau}
+According to the Tableau website, Tableau is a program that allows to connect and visualize one’s information in mintues; it is 10 to 100 times faster than other visual programs. It does not require programming knowledge and almost anyone can use it. It allows you to explore any data, updates automatically, and takes seconds to share visualizations on the web and mobile devices. “Wells Fargo wrangles data from over 70 million customers to redesign customer banking portals” through Tableau. (Tableau) This clearly falls in the realm of big data visualization. Finances Online says, “Tableau provides beautiful data analytics that can help all business make better business decisions.” (FinancesOnline) Tableau offers more visual options than google chart that are used in the Healthcare analytics, Education analytics, Government analytics, IT analytics, Marketing analytics, Big Data, Maps, Amazon Web services, and Google itself. (Tableau) Below is a chart from Idatalabs comparing the use of Google Chart vs Tableau, and other competitors for business intelligence. 
+
+
+\section{Challenges}
+
+According to Dr. Steven Targum in his article, The Distinction between Clinical and Research Interviews in Psychiatry, published by Innovations in Clinical Neuroscience Journal, "Clinical research attempts to minimize any extraneous factors that might affect assessments and adversely influence trial outcomes, including the potential for high placebo responses." (pg.44, March 8, 2011) 
+The Placebo effect is a factor that exists in clinical trials today, and can impact the results of a trail. 
+In order for sponsors to prove that their drug can be used as a treatment for a certain indication, the trial results of the drug have to be more effective than placebo. Unfortunately, placebo cannot be eliminated in a trial, but it can be mitigated. 
+Other challenges include adverse events such as wrong dosage of the drug is given to the subject, protocol deviations or an event of death due to the trial, which can terminate the trail. 
+
+\section{Conclusion} 
+Clinical Trials are utilizing big data applications and analysis to store and track a multitude of documentation from the sites, vendors, sponsors, licensors, and CROs for regulatory purposes and operation of the trail itself. 
+In addition, massive data is collected throughout the trial durations in different applications such as databases and is then investigated and analyzed for various reporting and purposes. 
+Even with this technological progress in clinical trials, there is still more innovations to discover. 
+Advancement in artificial Intelligence, and applications of Data Mining will change clinical trials of the future. 
+ 
+\begin{acks}
+
+The authors would like to thank professor Gregor von Laszewski and his associates for providing the template code on which I wrote this paper.
+
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
+\input{bibtex-error}\input{issues}\end{document}
+
+\input{bibtex-error}\input{issues}\end{document}
