@@ -48,7 +48,7 @@ project:
     abstract: This paper showcases tis and that and the other
     author:
         - Tibenkana, Jacob
-    pid:
+    hid:
         - 341
     status: in progress
     title: Not submitted
