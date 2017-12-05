@@ -73,10 +73,6 @@ In his article, Sunil Ray goes to show 9 examples of visualization he makes from
 
 From this data set, let’s look at three visualizations created by Sunil, to see more visit https://www.analyticsvidhya.com/blog/2015/05/data-visualization-python/.  
 
-He starts off by importing the Matplotlib and Seaborn libraries into his Python text editor by using this call function, import matplotlib.pyplot as plt, this provides access to the chart capabilities in Matplotlib and Seaborn.
-Then he imports the Pandas library as, import pandas as pd, “Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with relational or labeled data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python.” (Pydata, 2017) 
-Next he Imports his data frame, which is the date set above in the table along with pandas processing and reading that data set through the code, df=pd.read_excel("E:/First.xlsx", "Sheet1"
-
 The three visulizations below are, a histogram showing age distribution (Graph 1), a box plot to show the spreading of ages based on the five elements: the min age, first quartile age, median age, third quartile age, and max age (Graph 2). He creates a violin plot (Graph 3) to show the relation between age and gender of the data set in the table above.
 
 \begin{figure}[htb]
@@ -87,15 +83,6 @@ The three visulizations below are, a histogram showing age distribution (Graph 1
   \label{fig:Graph 1} 
 \end{figure}
 
-The python code for this histogram is:
-fig=plt.figure() 
-ax = fig.add_subplot(1,1,1)
-ax.hist(df['Age'],bins = 7) 
-plt.title('Age distribution')
-plt.xlabel('Age')
-plt.ylabel('#Employee')
-plt.show()
-
 \begin{figure}[htb]
   \centering
   \includegraphics[width=1.0\columnwidth]{paper2/Graph 2.png}
@@ -103,13 +90,6 @@ plt.show()
   \cite{Sunil Ray }}
   \label{fig:Graph 2} 
 \end{figure}
-
-The python code for this Box plot is:
-fig=plt.figure()
-ax = fig.add_subplot(1,1,1)
-#Variable
-ax.boxplot(df['Age'])
-plt.show()
 
 \begin{figure}[htb]
   \centering
@@ -119,71 +99,12 @@ plt.show()
   \label{fig:Graph 3} 
 \end{figure}
 
-The python code for this violin plot is:
-sns.violinplot(df['Age'], df['Gender']) #Variable Plotsns.despine()
-
 Note these are example of what Python can do, however someone can contend that the same results can be achieved in excel. Yes, this can be done in excel, but what happens if one has over hundreds of thousands of data from different sources. Excel can crush if there is too much information and depending on the capabilities of the computer. Therefore, Python can be a program to get around this. Another program like Python that will do visualizations is R. 
 
 \section{R}
 R is a programming language and a landscape for arithmetical computing and visuals. “R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible.” (R Foundation) The R Foundation website goes on to say that R’s strength comes from the ease in which publication plots can be produced, in addition to the mathematical codes and workings that are available for use. Furthermore, reaching outside of the default settings for the graphics in R, the user retains control and can explore into options. This can be done by importing the package ggplot2 in R Studio, which will give you access to a wide range of graphics options like the ones found in Matplotlib and Seaborn through Python. According to the R Foundation, R has a built-in documentation format like Latex. (R Foundation) However, users still have an option to use Latex (specifically MiKTeX) with R. The Latex project says, Latex is a system that prepares documents for publication and communication for scientific documents, but it can be used for most publications. (Latex Project) Let look at how visuals can be produced using R and Latex. 
 
-*Please note, the following example of R code with Latex is an example made by Jacob tibenkana and Jeremy Driscoll using the Titanic data pulled from Kaggle is a public online community of individuals (data analysts, data scientists, and others) that uses Pyrhon to investigate real world data examples, however here we will be looking at the data from an R perspective rather than through Python. To begin we need to download the following: R, R studio, and MikTeX (version of Latex). 
-In R Studio, we set the file we are working with to Knitr, which allows to knit Python with Latex. Then we import the following packages, library(knitr), library(ggplot2), library(dplyr), library(tidyr). Think of these like the Python Libraries that were imported in Sunil’s examples above.
-Library(knitr) allows for coupling of R with Latex, Library(ggplot2) allows for access to a wide range of graphics in R, Library(dplyr) and Library(tidyr) allows for exploration and processing of the Titanic data and organize it in tables so we can refer to ggplot2 for the graphics we want to display.
-In R studio, the following will be displayed on line one:
-\documentclass{article}, this is the beginning of the Latex shell and we can type the test we want here to describe the R Code that will follow. For a visual of how this looks in R Studio, please refer to the appendix below. 
-
-Next the R code with Latex is displayed as:
-
-%\begin{document}
-<<echo=FALSE>>=
-library(knitr)
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-df<-read.csv("train.csv",stringsAsFactors = FALSE)
-@
-<<>>=
-ggplot(data=df,aes(x=Sex))+geom_bar()
-@
-<<>>=
-tb<-df%>%group_by(Sex,Survived)%>%summarise(Sum=n())
-colnames(tb)<-c("Sex","Survived","Sum")
-tb$Survived<-ifelse(tb$Survived==0,"No","Yes")
-kable(tb)
-@
-<<>>=
-ggplot(tb)+geom_col(aes(x=Sex,y=Sum,fill=Survived))
-@
-<<>>=
-df$Agegroups<-ifelse(df$Age<10,"0-9",
-              ifelse(df$Age<20,"10-19",
-              ifelse(df$Age<30,"20-29",
-              ifelse(df$Age<40,"30-39",
-              ifelse(df$Age<50,"40-49",
-              ifelse(df$Age<60,"50-59",
-              ifelse(df$Age<70,"60-69",
-              ifelse(df$Age<80,"70-79",NA))))))))
-tb<-df%>%group_by(Agegroups,Survived)%>%summarise(Sum=n())%>%ungroup()
-tb$Survived<-ifelse(tb$Survived==0,"No","Yes")
-tb<-na.omit(tb)
-x<-data.frame(Agegroups="70-79", Survived="Yes",Sum=0,stringsAsFactors = FALSE)
-tb<-rbind(tb,x)
-tb2<-tb%>%spread(Survived,Sum)
-kable(tb2)
-@
-<<>>=
-ggplot(tb)+geom_col(aes(x=Agegroups,y=Sum,fill=Survived),position="dodge")+xlab("Age Groups")
-@
-<<>>=
-Ave<-df%>%group_by(Survived)%>%summarise("Mean Age"=mean(Age,na.rm = TRUE),"Mean of Siblings and Spouse"=mean(SibSp,na.rm = TRUE))
-Ave$Survived<-ifelse(Ave$Survived==0,"No","Yes")
-kable(Ave)
-@:
-
-%\end{document}
-
-This code will produce the following visuals in a pdf report:
+Please note, the following visualizations examples have been made by Jacob tibenkana and Jeremy Driscoll using the Titanic data pulled from Kaggle is a public online community of individuals (data analysts, data scientists, and others) that uses Pyrhon to investigate real world data examples. 
 
 \begin{figure}[htb]
   \centering
