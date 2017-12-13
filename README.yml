@@ -4,6 +4,7 @@ owner:
     name: Tibenkana, Jacob
     url: https://github.com/bigdata-i523/hid341
 paper1:
+    exclude: True
     abstract: >
         This paper will provide a brief overview of how Pharmaceutical
         companies use big data applications to track and analyze data
@@ -45,6 +46,7 @@ paper2:
     type: Latex
     url: https://github.com/bigdata-i523/hid341/paper2
 project:
+    exclude: True
     abstract: This paper showcases tis and that and the other
     author:
         - Tibenkana, Jacob
